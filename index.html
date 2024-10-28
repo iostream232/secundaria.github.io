@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="client/img/ico.png" type="image/png">
+    <title>TELESECUNDARIA FRANCISCO I. MADERO</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        /* Estilos Personalizados */
+        .header-bg {
+            background-color: #11165A;
+        }
+
+        .header-img {
+            width: 120px;
+            height: 350px;
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .section-title {
+            color: #003366;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .carousel-inner img {
+            max-height: 350px;
+            object-fit: cover;
+        }
+
+        .btn-primary {
+            background-color: #003366;
+            border-color: #003366;
+        }
+
+        footer {
+            background-color: #222;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Encabezado -->
+    <header class="header-bg text-white text-center">
+        <div class="container-fluid p-0 bg-dark">
+            27ETV0025K1
+        </div>
+        <div class="container-fluid p-0">
+            <img src="client/img/banner_secu.png" alt="Logo Secundaria" class="header-img w-100 mb-0">
+        </div>
+    </header>
+
+    <style>
+        .color-facebook {
+            background-color: #0866ff;
+        }
+
+        .color-instagram {
+            background-color: #f62782;
+            background: radial-gradient(circle at 0% 107%, #fdf497 0%, #fdf497 10%, #fd5949 60%, #d6249f 80%, #285AEB 97%)
+        }
+
+        .color-threads {
+            background-color: #fff;
+            color: #000 !important;
+        }
+
+        .color-twitter {
+            background-color: #0f0f0f;
+        }
+
+        .color-youtube {
+            background-color: red;
+        }
+
+        .social-btn {
+            color: #fff;
+            box-shadow: rgba(0, 0, 0, .125) 2px 2px 3px;
+
+        }
+
+        .social-btn img {
+            width: 40px;
+        }
+
+        .social-btn p {
+            /* color: #fff;*/
+            margin-top: 0;
+            margin-bottom: 0
+        }
+
+        .icon-facebook {
+            order: 2;
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAABxElEQVR4nNWXu0oDQRSGE0XxWgk+gKVgFUijIlELIZXgK1hZaBGtTSFeOzvBUnwJIYqoTXwBESWiklhokUYF88khA07iZHdmLxF/2CY7/yU755ydTST+C4BOYBLYA66ACvCpror6bReYkLVRGvcCa8rEFrJ2FegJa74APBAcJWA+iHESWAdqhIdobAEdtuYdwDHR40j+mE2ADeJD3mbPawGEH4FL1QnXwGuLdbWWNUG92l0LTgzTBq0hn8L83R3UW80FRa828+HmTEOm4hgg47OdXig3dAX1CeeCN1NbqUc/AmQtNMZ1ooxXFxQN5ovAl4PGjk6WYnLBqSHAiaPGhU5+cSQXDAEKjhplnfzxBwHedXLVgjDqVfVNYcYs9Ko64dZvta250hu2CHCjE84jDpC2CHCmE7YtCEvArLpSBtOUdv/QQm9TJ0/T/iKc0sndwHMbAzwBXc0CuTYGWDEVTr96ScQdQJ50X6vqnbM8kAQNINpZo7njiylogJ8XkM+JeD+GAAcuJ+OkpPXYDpcANTVn/E/EzVBDpRQigHBnEmEADErbAPcOAe6AZWAglHmi0UDOjTIx86ZiUlsmX1OZSD9O48Y3QGWlCM160NoAAAAASUVORK5CYII=) 50% 50% no-repeat;
+            background-size: 100%
+        }
+
+        .icon-instagram {
+            order: 2;
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAACe0lEQVR4nLWXPU9UQRSGb5YEK6Va3e2IhCix0rXXP2E2WhpCpUIDsv4EvzpC1IJK+Q0rJn4FWLRAKRD1F6BIpY0YH3PCTHxzd+4X9+6bTAhzPt535sycnRtFGQBqQBM4XXBYTC0rfxDACDAPvAf+cHRY7DvgtuXMS34V2KN6fAfaWeR3gL+xFawBT4FHBYfFrMd20HJ3ksivCbn9XQBO5dq29EU1gMVY7nao5nvicL0scUDIpOzEN+CEGjtiXKiQ9BxwSf630njMqaOddsNB3m03P6DlRl+MrRD45fJednNNORMb3nHIERtWM0iPATPAVuCUfwSmgWHnOwx8BX4CE5JjXRZb84fE41kK+QTwJcd12wHOioj/tT6cWxbfhk2MysRSCvm++P0GusADN7puzmPfiwjkWhK/0UwBbts/i88ra7UBvzFn8/jky1FWwIzYX4aSiq9t+Rvxv1mFgC3Z9r6VB/zHpRwfSgng8Kp5dLPIJW5F4k6WEXBRbHcLCLgvca0yAlpiu1dAgN0Mj/NVleB5AQEvJK5+ZAEG1+FwB2ssyncIfWfdDNgLC5gW++sc1/Ct+N+oqhHtiI/d8/GElSv5diWNyGBtNdaKD9xVe+jGimy74QdwJgogJKAhE8uhIBFh7TUL20nkST9GQ6J+LSlQanzLOlyAeNNqnnZGXI6eHOqan7SnM+6x0EhLIInqwAU36jlj9EHSU4O92z0WowEBeCI8s2oYce92/yidHAD5lJDvAsfjDu3YN4E9IJsVENu2P5a8xnElybkT+DDplfgw2Qh8mMxnKW5LOarEbuLKo34R9qSecyvQBlMUdtVsB2f7al6ghgP9PP8HNHUX5N6MSkcAAAAASUVORK5CYII=) 50% 50% no-repeat;
+            background-size: 100%
+        }
+
+        .icon-threads {
+            order: 2;
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: url(data:image/svg+xml;base64,PHN2ZyBhcmlhLWxhYmVsPSdUaHJlYWRzJyB2aWV3Qm94PScwIDAgMTkyIDE5MicgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJz48cGF0aCBjbGFzcz0neDE5aHFjeScgZD0nTTE0MS41MzcgODguOTg4M0MxNDAuNzEgODguNTkxOSAxMzkuODcgODguMjEwNCAxMzkuMDE5IDg3Ljg0NTFDMTM3LjUzNyA2MC41MzgyIDEyMi42MTYgNDQuOTA1IDk3LjU2MTkgNDQuNzQ1Qzk3LjQ0ODQgNDQuNzQ0MyA5Ny4zMzU1IDQ0Ljc0NDMgOTcuMjIyIDQ0Ljc0NDNDODIuMjM2NCA0NC43NDQzIDY5Ljc3MzEgNTEuMTQwOSA2Mi4xMDIgNjIuNzgwN0w3NS44ODEgNzIuMjMyOEM4MS42MTE2IDYzLjUzODMgOTAuNjA1MiA2MS42ODQ4IDk3LjIyODYgNjEuNjg0OEM5Ny4zMDUxIDYxLjY4NDggOTcuMzgxOSA2MS42ODQ4IDk3LjQ1NzYgNjEuNjg1NUMxMDUuNzA3IDYxLjczODEgMTExLjkzMiA2NC4xMzY2IDExNS45NjEgNjguODE0QzExOC44OTMgNzIuMjE5MyAxMjAuODU0IDc2LjkyNSAxMjEuODI1IDgyLjg2MzhDMTE0LjUxMSA4MS42MjA3IDEwNi42MDEgODEuMjM4NSA5OC4xNDUgODEuNzIzM0M3NC4zMjQ3IDgzLjA5NTQgNTkuMDExMSA5Ni45ODc5IDYwLjAzOTYgMTE2LjI5MkM2MC41NjE1IDEyNi4wODQgNjUuNDM5NyAxMzQuNTA4IDczLjc3NSAxNDAuMDExQzgwLjgyMjQgMTQ0LjY2MyA4OS44OTkgMTQ2LjkzOCA5OS4zMzIzIDE0Ni40MjNDMTExLjc5IDE0NS43NCAxMjEuNTYzIDE0MC45ODcgMTI4LjM4MSAxMzIuMjk2QzEzMy41NTkgMTI1LjY5NiAxMzYuODM0IDExNy4xNDMgMTM4LjI4IDEwNi4zNjZDMTQ0LjIxNyAxMDkuOTQ5IDE0OC42MTcgMTE0LjY2NCAxNTEuMDQ3IDEyMC4zMzJDMTU1LjE3OSAxMjkuOTY3IDE1NS40MiAxNDUuOCAxNDIuNTAxIDE1OC43MDhDMTMxLjE4MiAxNzAuMDE2IDExNy41NzYgMTc0LjkwOCA5Ny4wMTM1IDE3NS4wNTlDNzQuMjA0MiAxNzQuODkgNTYuOTUzOCAxNjcuNTc1IDQ1LjczODEgMTUzLjMxN0MzNS4yMzU1IDEzOS45NjYgMjkuODA3NyAxMjAuNjgyIDI5LjYwNTIgOTZDMjkuODA3NyA3MS4zMTc4IDM1LjIzNTUgNTIuMDMzNiA0NS43MzgxIDM4LjY4MjdDNTYuOTUzOCAyNC40MjQ5IDc0LjIwMzkgMTcuMTEgOTcuMDEzMiAxNi45NDA1QzExOS45ODggMTcuMTExMyAxMzcuNTM5IDI0LjQ2MTQgMTQ5LjE4NCAzOC43ODhDMTU0Ljg5NCA0NS44MTM2IDE1OS4xOTkgNTQuNjQ4OCAxNjIuMDM3IDY0Ljk1MDNMMTc4LjE4NCA2MC42NDIyQzE3NC43NDQgNDcuOTYyMiAxNjkuMzMxIDM3LjAzNTcgMTYxLjk2NSAyNy45NzRDMTQ3LjAzNiA5LjYwNjY4IDEyNS4yMDIgMC4xOTUxNDggOTcuMDY5NSAwSDk2Ljk1NjlDNjguODgxNiAwLjE5NDQ3IDQ3LjI5MjEgOS42NDE4IDMyLjc4ODMgMjguMDc5M0MxOS44ODE5IDQ0LjQ4NjQgMTMuMjI0NCA2Ny4zMTU3IDEzLjAwMDcgOTUuOTMyNUwxMyA5NkwxMy4wMDA3IDk2LjA2NzVDMTMuMjI0NCAxMjQuNjg0IDE5Ljg4MTkgMTQ3LjUxNCAzMi43ODgzIDE2My45MjFDNDcuMjkyMSAxODIuMzU4IDY4Ljg4MTYgMTkxLjgwNiA5Ni45NTY5IDE5Mkg5Ny4wNjk1QzEyMi4wMyAxOTEuODI3IDEzOS42MjQgMTg1LjI5MiAxNTQuMTE4IDE3MC44MTFDMTczLjA4MSAxNTEuODY2IDE3Mi41MSAxMjguMTE5IDE2Ni4yNiAxMTMuNTQxQzE2MS43NzYgMTAzLjA4NyAxNTMuMjI3IDk0LjU5NjIgMTQxLjUzNyA4OC45ODgzWk05OC40NDA1IDEyOS41MDdDODguMDAwNSAxMzAuMDk1IDc3LjE1NDQgMTI1LjQwOSA3Ni42MTk2IDExNS4zNzJDNzYuMjIzMiAxMDcuOTMgODEuOTE1OCA5OS42MjYgOTkuMDgxMiA5OC42MzY4QzEwMS4wNDcgOTguNTIzNCAxMDIuOTc2IDk4LjQ2OCAxMDQuODcxIDk4LjQ2OEMxMTEuMTA2IDk4LjQ2OCAxMTYuOTM5IDk5LjA3MzcgMTIyLjI0MiAxMDAuMjMzQzEyMC4yNjQgMTI0LjkzNSAxMDguNjYyIDEyOC45NDYgOTguNDQwNSAxMjkuNTA3Wic+PC9wYXRoPjwvc3ZnPg==) 50% 50% no-repeat;
+            background-size: 100%;
+            /*filter: invert(1);*/
+            transform: scale(.9);
+        }
+
+        .icon-twitter {
+            order: 2;
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgd2lkdGg9IjI0cHgiIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDI0IDI0IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNCAyNDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGQ9Ik0xNC4wOTU0NzksMTAuMzE2NDgyTDIyLjI4NjM1NCwxaC0xLjk0MDcxOGwtNy4xMTUzNTIsOC4wODc2ODJMNy41NTE0MTQsMUgxbDguNTg5NDg4LDEyLjIzMTA5M0wxLDIzaDEuOTQwNzE3ICBsNy41MDkzNzItOC41NDI4NjFMMTYuNDQ4NTg3LDIzSDIzTDE0LjA5NTQ3OSwxMC4zMTY0ODJ6IE0xMS40MzY1MjIsMTMuMzM4NDY1bC0wLjg3MTYyNC0xLjIxODcwNGwtNi45MjQzMTEtOS42ODgxNWgyLjk4MTMzOSAgbDUuNTg5NzgsNy44MjE1NWwwLjg2Nzk0OSwxLjIxODcwNGw3LjI2NTA2LDEwLjE2NjI3MWgtMi45ODEzMzlMMTEuNDM2NTIyLDEzLjMzODQ2NXoiLz48L3N2Zz4=) 50% 50% no-repeat;
+            background-size: 100%;
+            filter: invert(1);
+            transform: scale(.85);
+        }
+
+        .icon-youtube {
+            order: 2;
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACD0lEQVR4nO3ZT4hNURzA8Wcyk5qIQViRBRY2TIqiKdlamvInG6Vko8liSmnSlGQlbJSxsMGUDZ6EjCQbZApJ1lLIQrFAH9066na678XMvc87db91Vvf1+93v651zfu/3azRqampqalIE/ViONRgMazN2FKw/zzdiNRajtxMvOYCtOIjTuIz7eIVP+KkcvuE9nuEGLuA4dmE9+mby8vNwFNO6h++YxLa/lVgbvu1u5RdOYU47iUV4Kw1G24lkpqnwAytbibyRFkeKJOYGy5S4VCSySno8KRIZkh5fikT2lxD4KT7rLCtikWMlBB0PJcfZDu63oSqO3vHoYr2peoZjkXNliuTiZoXiS9VxOE44UYVIiN0bis6PymcsTna1KpGokj5T8v45HyfJSudKRXK51qGpHK7FwbP/GB0RifbP61nmfBAHnfoPIjvxbpY5H8VB7yb607odB28mutkn4yTXKz5+R7LaSPlMxMkuJnohnowTZh2SFEuUkVhkNNGicU8skvWPUizjt8QiWecvRZbFIvOlx9fC/hY+SIvpouM+E7knLa60EjkkLYYbbW7gh9KgiZ5CkSCzNCuNdTd3sLClRE6mBwfwWHd14aewt20nvo3UAmzCPpwINdktvAinXDa3KHPQ8zw36BnD7nDH9f/zy89Atg9LwihtMLfisdv23LMN4fMDHRm91dTU1NQ0KuI3PorRs6xvl7QAAAAASUVORK5CYII=) 50% 50% no-repeat;
+            background-size: 100%
+        }
+
+        .icon-share {
+            order: 2;
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAABLklEQVR4nO3VTysEYRzA8XkNnJQU7pKypUXIRd6REq7KSdI6kz9RDrscUZaX4M4L4A3Yj6bdLW07++yyzyjt9zQ103y/8/yemUmSAf8VrOIUz7jAep7yLe3Zy0M+rzNxVwJHgYDz2AHlQEA1pnwWL4GA41jisjA1LMUU13CJHXy2kW/0cvMJLGKsB/HUt2umsY8KDjHXrXgSjy31txjpRvwrMIy3jPm9RxM3acwutIn6L26C+0DAdRIT3P11wHYXI7iKOYIhvGbIP3IJUX//H1pklcZrWGgc5xIyjgWMtjkXDMEMDnCDEooxIgsZIVmf4s2+R2SEdGIliYV6SOh3fBItIKWLlajGDigFAs5iBxQbGy6LtagBKeluz5DvJnmB5XTD4Sld9lyefEDyA74AGXMEK//4IKoAAAAASUVORK5CYII=) 50% 50% no-repeat;
+            background-size: 100%;
+            margin: 9px 7.5px
+        }
+
+        .icon-cerrado {
+            order: 2;
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAz0lEQVR4nM2XQRKCMAxFi+NK9BZyYwcWnkVZcLDnMLajdFDStBD+Ovlv0pQ0OLcXAUegKejXjJ5LQTXQ81YLVBnAynvgPetfgSfgyVR34KCE3iKvAbjMHW+oNFaXUrmHjjlz6ifH7vvwTyL4AjToGieFfqjgQmgr7QuSnufkqg2yoRqjYtDEfnXCmLRZgKyaMpUWhOuhGfB8qAJeDmoGxuKosbhcWHxOWAwQLEYmFo8EVs8iFosAVqsPVsve13r7WHm9Pe9noXefhO1/YbbUCy46wzuSr0qSAAAAAElFTkSuQmCC) 50% 50% no-repeat;
+            background-size: 100%;
+            margin: 9px
+        }
+
+        .social-share-btn {
+            bottom: 5%;
+            right: 1%;
+            position: fixed;
+            z-index: 10;
+        }
+
+        .share-container {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            box-shadow: 4px 2px 10px 1px rgba(0, 0, 0, 0.2);
+            background: #a57f2c
+        }
+
+        .share-container .icon-share {
+            margin-right: 2px
+        }
+
+        .share-container:active:not(:focus-within) {
+            box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.2) inset
+        }
+
+        .social-share {
+            position: absolute;
+            bottom: 60px;
+            display: none;
+            right: 2px
+        }
+
+        .toggle input[type="checkbox"]:checked+.share-container .social-share {
+            animation: fadeIn 1s;
+            display: block
+        }
+
+        .toggle input[type="checkbox"]:not(:checked)+.share-container .social-share {
+            animation: fadeOut 1s
+        }
+
+        .toggle input[type="checkbox"]:checked+.share-container .icon-share,
+        .toggle input[type="checkbox"]:not(:checked)+.share-container .icon-cerrado {
+            display: none
+        }
+
+        .social-share a {
+            margin: 12px auto;
+            display: block;
+        }
+
+        .social-btn p {
+            display: none;
+        }
+
+        .social-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%
+        }
+
+        .social-btn div {
+            margin: 8px
+        }
+
+        input[type="checkbox"]#toggle {
+            display: none
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1
+            }
+
+            to {
+                opacity: 0
+            }
+        }
+
+        @media only screen and (min-width: 600px) {
+            .social-share-btn {
+                position: fixed;
+                top: 55%;
+                bottom: auto;
+                left: 0;
+                z-index: 10;
+                width: 50px;
+            }
+
+            .toggle input[type="checkbox"]:checked+.share-container .social-share,
+            .toggle input[type="checkbox"]:not(:checked)+.share-container .social-share {
+                animation: none;
+                display: block
+            }
+
+            .toggle input[type="checkbox"],
+            .icon-share,
+            .icon-cerrado {
+                display: none;
+            }
+
+            .share-container {
+                display: block;
+                visibility: hidden;
+            }
+
+            .social-share {
+                visibility: visible;
+                left: 0;
+                bottom: 0;
+            }
+
+            .social-share a {
+                text-decoration: none;
+                font-weight: 700;
+                text-transform: capitalize;
+                margin: 4px 0;
+            }
+
+            .social-share a:hover {
+                text-decoration: none !important
+            }
+
+            .social-btn p {
+                display: flex;
+                text-align: right;
+            }
+
+            .social-btn {
+                display: flex;
+                width: 184px;
+                align-items: center;
+                justify-content: space-between;
+                border-radius: 0 30px 30px 0;
+                position: relative;
+                left: -133px;
+                transition: left 1s;
+                padding: 4px 4px 4px 20px;
+                height: 40px;
+            }
+
+            .social-btn:hover {
+                left: -10px;
+                transition: left 1s
+            }
+        }
+    </style>
+
+    <div class="social-share-btn">
+        <label class="toggle" for="toggle">
+            <input type="checkbox" id="toggle">
+            <div class="share-container">
+                <div class="icon-share"></div>
+                <div class="icon-cerrado"></div>
+                <div class="social-share">
+                    <a href="https://www.facebook.com/profile.php?id=100090836438044">
+                        <div class="social-btn color-facebook">
+                            <div class="icon-facebook"></div>
+                            <p class="order-1">Facebook</p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="social-btn color-instagram">
+                            <div class="icon-instagram"></div>
+                            <p class="order-1">Instagram</p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="social-btn color-threads">
+                            <div class="icon-threads"></div>
+                            <p class="order-1">Threads</p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="social-btn color-twitter">
+                            <div class="icon-twitter"></div>
+                            <p class="order-1">X (twitter)</p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="social-btn color-youtube">
+                            <div class="icon-youtube"></div>
+                            <p class="order-1">YouTube</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </label>
+    </div>
+
+    <!-- Menú de Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Inicio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#mision">Misión</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#vision">Visión</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Panel Administrador</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección de Introducción -->
+    <section class="py-5 bg-light text-center">
+        <div class="container">
+            <h2 class="section-title">Educación para el futuro</h2>
+            <p class="lead">En nuestra secundaria, nos esforzamos por ofrecer una educación de calidad, centrada en
+                valores, responsabilidad y el desarrollo integral de nuestros estudiantes.</p>
+        </div>
+    </section>
+
+    <!-- Misión y Visión -->
+    <section class="container py-5">
+        <div class="row">
+            <div class="col-md-6" id="mision">
+                <h3 class="section-title">Nuestra Misión</h3>
+                <p>Formar estudiantes comprometidos con su entorno, capaces de enfrentar los retos del futuro con
+                    responsabilidad, ética y excelencia académica.</p>
+            </div>
+            <div class="col-md-6" id="vision">
+                <h3 class="section-title">Nuestra Visión</h3>
+                <p>Ser una institución educativa líder, reconocida por la calidad de su enseñanza y por fomentar el
+                    crecimiento integral de sus estudiantes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería de Imágenes y Facebook -->
+    <section id="galeria" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Ciclo escolar 2023-2024</h2>
+            <div class="row">
+                <!-- Carrusel de Imágenes -->
+                <div class="col-md-6 mb-4">
+                    <div id="carouselGaleria" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="client/img/galeria/photo_Galeria0.jpg" class="d-block w-100" alt="Imagen 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="client/img/galeria/photo_Galeria5.jpg" class="d-block w-100" alt="Imagen 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="client/img/galeria/photo_Galeria6.jpg" class="d-block w-100" alt="Imagen 3">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselGaleria"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselGaleria"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                            <span class="visually-hidden">Siguiente</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Feed de Facebook -->
+                <div class="col-md-6 mb-4 d-flex justify-content-center align-items-center">
+                    <iframe
+                        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02yCw8SiwAZphr6UjBrx9325aqrTrxH7pJ7VoUjrM22PnwygoWxx6scFUmj8n6A5Jrl%26id%3D100090836438044&show_text=true&width=500"
+                        width="500" height="350" style="border:none;overflow:hidden" scrolling="yes" frameborder="0"
+                        allowfullscreen="true"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <!-- Título de Contacto -->
+                <div class="col-12 text-align mb-4">
+                    <h3>Contacto</h3>
+                    <hr class="red mx-auto" style="width: 50px; height: 3px;">
+                </div>
+
+                <!-- Información de Contacto -->
+                <div class="col-md-4 col-sm-8 mb-4">
+                    <h5>Dirección:</h5>
+                    <p>
+                        Francisco I. Madero<br>
+                        Carretera Federal A Macuspana s/n,<br>
+                        Rancheria San Juan Del Alto 2da Sección,<br>
+                        Jalapa, Tabasco, C.P. 86850
+                    </p>
+
+                    <h5>Teléfonos:</h5>
+                    <p>
+                        Principal: 5536017599<br>
+                        Atención Ciudadana: 800 288 6688<br>
+                        Horario: 8:00 a 20:00 horas
+                    </p>
+
+                    <h5>Secretaría de Educación Pública</h5>
+
+
+                    <p>
+                        Envía tus dudas o comentarios a <a
+                            href="mailto:contacto@secundaria.edu.mx">contacto@secundaria.edu.mx</a>
+                    </p>
+                </div>
+
+                <!-- Mapa de Ubicación -->
+                <div class="col-md-8 col-sm-12">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1874.9980763407295!2d-92.71124625144087!3d17.817924097788694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ede8b848a94965%3A0x56c5b014167ae51c!2sTelesecundaria%20San%20Juan%20El%20Alto!5e0!3m2!1ses-419!2smx!4v1730130317457!5m2!1ses-419!2smx"
+                            width="600" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Pie de Página -->
+    <footer class="text-white py-4 bg-dark">
+        <div class="container d-flex justify-content-between align-items-center">
+            <!-- Redes Sociales -->
+            <div class="social-icons">
+                <h5>Síguenos en:</h5>
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/profile.php?id=100090836438044&sk=photos" target="_blank" rel="noopener" title="Facebook">
+                            <img alt="Facebook" src="https://framework-gb.cdn.gob.mx/landing/img/facebook.png" style="width: 24px;">
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#" target="_blank" rel="noopener" title="Twitter">
+                            <img alt="Twitter" src="https://framework-gb.cdn.gob.mx/landing/img/twitter.png" style="width: 24px;">
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+    
+            <!-- Logo SEP -->
+            <div>
+                <img src="client/img/SEP_Logo_2019.svg.png" alt="Logo SEP" class="footer-logo" style="max-width: 120px;">
+            </div>
+        </div>
+    
+        <!-- Derechos reservados -->
+        <div class="container text-center    mt-6">
+            <p class="mb-0">&copy; 2024 Secundaria Francisco I. Madero. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
